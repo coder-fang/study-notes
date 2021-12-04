@@ -1,0 +1,18 @@
+{
+  "properties": [
+    {
+      "name": "spring.sharding.jdbc.datasource.<data-source-name>.driver-class-name",
+      "type": "java.lang.String",
+      "description": "Description for spring.sharding.jdbc.datasource.<data-source-name>.driver-class-name."
+    },
+    {
+      "name": "spring.sharding.jdbc.datasource.<data-source-name>.url",
+      "type": "java.lang.String",
+      "description": "Description for spring.sharding.jdbc.datasource.<data-source-name>.url."
+    },
+    {
+      "name": "sharding.shardingsphere.sharding.tables.<logic-table-name>.actual-data-nodes=",
+      "type": "java.lang.String",
+      "description": "Description for sharding.shardingsphere.sharding.tables.<logic-table-name>.actual-data-nodes=."
+    }
+  ] }

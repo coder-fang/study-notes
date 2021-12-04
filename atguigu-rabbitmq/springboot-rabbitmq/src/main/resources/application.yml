@@ -1,0 +1,8 @@
+spring:
+  rabbitmq:
+    host: 59.110.171.189
+    port: 5672
+    username: admin
+    password: 123
+    publisher-confirm-type: correlated   # 消息确认机制
+    publisher-returns: true       # 发布确认机制
