@@ -1,0 +1,12 @@
+#org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+#org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration
+#org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+#org.springframework.cloud.zookeeper.serviceregistry.ZookeeperAutoServiceRegistrationAutoConfiguration,\
+#org.springframework.cloud.zookeeper.discovery.RibbonZookeeperAutoConfiguration,\
+#org.springframework.cloud.zookeeper.serviceregistry.ZookeeperServiceRegistryAutoConfiguration
+
+#说明：
+#这里有五行代码，前面两行说明设置自动配置的是eureka的注册发现，后面四行是ZK的注册发现，ZK配置了三个类，为什
+#么是三个后面简单解释，是因为我在测试的时候，只有一个的话会有问题；此时，我们工程引入的原始spring-cloud-netflix-eureka-cleint和spring-cloud-zookeeper-discovery包的spring.factories里面的配置被我们去掉了，挪到了我们自
+#己的工程下面，然后我们现在按照上面的配置启动，就发现可以注册到ZK了，且不会报bena的冲突错误了，然后我们注释掉后四行，
+#放开前两行，就可以注册到Eureka了，
