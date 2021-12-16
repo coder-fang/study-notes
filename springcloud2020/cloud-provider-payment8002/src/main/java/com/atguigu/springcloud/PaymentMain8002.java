@@ -17,5 +17,4 @@ public class PaymentMain8002 {
     public static void main(String[] args) {
         SpringApplication.run(PaymentMain8002.class, args);
     }
-
 }
