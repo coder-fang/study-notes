@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 @Slf4j
@@ -59,5 +60,23 @@ public class PaymentController {
         } else {
             return new CommonResult(444, "没有对应记录,查询ID：" + id, null);
         }
+    }
+
+    /**
+     * @description  设置超时情况
+     * @param
+     * @return java.lang.String
+     * @author LiFang
+     * @date 2021/12/20 15:18
+     */
+    @GetMapping(value = "/payment/feign/timeout")
+    public String paymentFeignTimeout() {
+        // 业务逻辑处理正确，但是需要耗费3秒钟
+        try {
+            TimeUnit.SECONDS.sleep(3);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return serverPort;
     }
 }
