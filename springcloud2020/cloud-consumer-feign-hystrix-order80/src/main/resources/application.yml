@@ -14,8 +14,10 @@ eureka:
 #        isolation:
 #          thread:
 #            timeoutInMilliseconds: 10000
-
-# 开启
+#ribbon:
+#  ReadTimeout: 5000
+#  ConnectTimeout: 5000
+#开启
 feign:
   hystrix:
     enabled: true
