@@ -13,7 +13,7 @@ import javax.annotation.Resource;
 
 @RestController
 @Slf4j
-@DefaultProperties(defaultFallback = "payment_Global_FallbackMethod")
+//@DefaultProperties(defaultFallback = "payment_Global_FallbackMethod")
 public class OrderHystrixController {
     @Resource
     private PaymentHystrixService paymentHystrixService;
@@ -41,7 +41,7 @@ public class OrderHystrixController {
     }
 
     //全局fallback方法
-    public String payment_Global_FallbackMethod() {
-        return "Global异常处理信息，请稍后再试，/(ㄒoㄒ)/~~";
-    }
+//    public String payment_Global_FallbackMethod() {
+//        return "Global异常处理信息，请稍后再试，/(ㄒoㄒ)/~~";
+//    }
 }

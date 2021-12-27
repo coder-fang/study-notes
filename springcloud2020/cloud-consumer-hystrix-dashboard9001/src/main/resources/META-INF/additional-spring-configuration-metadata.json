@@ -1,0 +1,13 @@
+{
+  "properties": [
+    {
+      "name": "proxy-stream-allow-list",
+      "type": "java.lang.String",
+      "description": "Description for proxy-stream-allow-list."
+    },
+    {
+      "name": "　dashboard",
+      "type": "java.lang.String",
+      "description": "Description for 　dashboard."
+    }
+  ] }
