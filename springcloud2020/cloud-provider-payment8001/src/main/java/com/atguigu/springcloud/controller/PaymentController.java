@@ -39,6 +39,11 @@ public class PaymentController {
         return this.discoveryClient;
     }
 
+    @GetMapping(value = "/payment/lb")
+    public String getPaymentLB() {
+        return serverPort;
+    }
+
     //只传给前端CommonResult，不需要前端了解其他的组件
     @PostMapping(value = "/payment/create")
     public CommonResult create(@RequestBody Payment payment) {
@@ -63,9 +68,9 @@ public class PaymentController {
     }
 
     /**
-     * @description  设置超时情况
      * @param
      * @return java.lang.String
+     * @description 设置超时情况
      * @author LiFang
      * @date 2021/12/20 15:18
      */
