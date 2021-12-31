@@ -1,0 +1,13 @@
+{
+  "properties": [
+    {
+      "name": "spring.        predicates",
+      "type": "java.lang.String",
+      "description": "Description for spring.        predicates."
+    },
+    {
+      "name": "spring.predicates",
+      "type": "java.lang.String",
+      "description": "Description for spring.predicates."
+    }
+  ] }
