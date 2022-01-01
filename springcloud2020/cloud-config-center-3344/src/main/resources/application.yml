@@ -16,7 +16,7 @@ spring:
       label: master
   rabbitmq:
     host: 59.110.117.189
-    port: 15672
+    port: 5672
     username: guest
     password: guest
     virtual-host: /
