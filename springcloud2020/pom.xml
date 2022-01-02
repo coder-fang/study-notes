@@ -25,6 +25,10 @@
         <module>cloud-consumer-hystrix-dashboard9001</module>
         <module>cloud-gateway-gateway9527</module>
         <module>cloud-config-center-3344</module>
+<<<<<<< HEAD
+=======
+        <module>cloud-config-client-3355</module>
+>>>>>>> cdcfcc1... cloud config
     </modules>
 
     <name>Maven</name>
