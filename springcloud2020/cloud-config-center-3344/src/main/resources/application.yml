@@ -8,18 +8,23 @@ spring:
     config:
       server:
         git:
-          uri: git@github.com:zzyybs/springcloud-config.git #GitHub上面的git仓库名字
+          uri: https://github.com/coder-fang/springcloud-config.git
           ####搜索目录
           search-paths:
             - springcloud-config
+          force-pull: true
+          username: coder-fang
+          password: Lf2673563903,
+          default-label: master
+          skip-ssl-validation: true
       ####读取分支
       label: master
-  rabbitmq:
-    host: 59.110.117.189
-    port: 5672
-    username: guest
-    password: guest
-    virtual-host: /
+#  rabbitmq:
+#    host: 59.110.117.189
+#    port: 5672
+#    username: guest
+#    password: guest
+#    virtual-host: /
 
 #服务注册到eureka地址
 eureka:
