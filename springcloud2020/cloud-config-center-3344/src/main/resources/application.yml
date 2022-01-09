@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name:  cloud-config-center #注册进Eureka服务器的微服务名
+    name: cloud-config-center #注册进Eureka服务器的微服务名
   cloud:
     config:
       server:
@@ -19,15 +19,23 @@ spring:
           skip-ssl-validation: true
       ####读取分支
       label: master
-#  rabbitmq:
-#    host: 59.110.117.189
-#    port: 5672
-#    username: guest
-#    password: guest
-#    virtual-host: /
+  # rabbitmq相关配置
+  rabbitmq:
+    host: 59.110.171.189
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
 
 #服务注册到eureka地址
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:7001/eureka
+
+# rabbitMQ 相关配置  暴露bus刷新配置的端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'bus-refresh'
