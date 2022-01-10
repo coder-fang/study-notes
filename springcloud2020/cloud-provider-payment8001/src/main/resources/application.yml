@@ -3,8 +3,19 @@ server:
 
 spring:
   application:
-#    name: cloud-provider-service
     name: cloud-payment-service
+
+  #服务追踪
+  zipkin:
+    base-url: http://59.110.171.189:9411/ # zipkin服务器的地址
+    discovery-client-enabled: false    #关闭服务发现，否则spring cloud会把zipkin的url当作服务名称
+    sender:
+      type: web #设苦使用http的方式传输数据
+  sleuth:
+    traceId128: true
+    sampler:
+      probability: 1.0 #设苦抽样采集率为100%,默认为0.1 ，即10%
+    propagation-keys: user_name
   datasource:
     #    type: com.alibaba.druid.pool.DruidDataSource      #当前数据源操作类型
     driver-class-name: com.mysql.jdbc.Driver        #mysql驱动包
@@ -24,7 +35,7 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://localhost:7001/eureka
-#      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka  # 集群版
+  #      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka  # 集群版
   instance:
     instance-id: payment8001
     prefer-ip-address: true   # 访问路径可以显示IP地址

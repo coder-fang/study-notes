@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "spring.zipkin.discovery-client-enabled",
+      "type": "java.lang.String",
+      "description": "Description for spring.zipkin.discovery-client-enabled."
+  }
+] }

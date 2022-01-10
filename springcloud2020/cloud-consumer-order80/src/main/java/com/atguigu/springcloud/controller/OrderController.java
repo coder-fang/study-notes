@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
-import javax.management.monitor.CounterMonitor;
 
 /**
  * @author LiFang
@@ -24,7 +23,7 @@ import javax.management.monitor.CounterMonitor;
 public class OrderController {
     //    public static final String PAYMENT_URL = "http://localhost:8001";
     //通过在eureka上注册过的微服务名称调用
-    private static final String PAYMENT_URL = "http://CLOUD-PROVIDER-SERVICE";
+    private static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE";
     @Resource
     private RestTemplate restTemplate;
 
@@ -38,7 +37,7 @@ public class OrderController {
         return restTemplate.getForObject(PAYMENT_URL + "/payment/get/" + id, CommonResult.class);
     }
 
-    @GetMapping("/getForEntity/{id}")
+    @GetMapping("getForEntity/{id}")
     public CommonResult<Payment> getPayment2(@PathVariable("id") Long id) {
         ResponseEntity<CommonResult> entity = restTemplate.getForEntity(PAYMENT_URL + "/payment/get/" + id, CommonResult.class);
         if (entity.getStatusCode().is2xxSuccessful()) {
@@ -47,5 +46,12 @@ public class OrderController {
         } else {
             return new CommonResult(444, "操作失败");
         }
+    }
+
+    // ============> zipkin+sleuth
+    @GetMapping("zipkin")
+    public String paymentZipkin() {
+        String result = restTemplate.getForObject(PAYMENT_URL + "/payment/zipkin", String.class);
+        return result;
     }
 }
