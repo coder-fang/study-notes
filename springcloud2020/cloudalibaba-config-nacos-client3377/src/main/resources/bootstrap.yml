@@ -15,7 +15,6 @@ spring:
         group: DEFAULT_GROUP
         namespace: 79d10b76-1fde-46ed-89d9-8dd93f5867d9
 
-
 # ${spring.application.name}-${spring.profile.active}.${spring.cloud.nacos.config.file-extension}
 # nacos-config-client-dev.yaml
 # nacos-config-client-test.yaml   ----> config.info
