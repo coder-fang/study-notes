@@ -11,5 +11,4 @@ public class JucApplication {
         // CPU 密集型   IO密集型
         System.out.println(Runtime.getRuntime().availableProcessors());
     }
-
 }
